@@ -1,0 +1,6 @@
+<h2>New errjob</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: errjob_path(@conn, :create) %>
+
+<%= link "Back", to: errjob_path(@conn, :index) %>

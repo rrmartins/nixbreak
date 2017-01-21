@@ -1,0 +1,23 @@
+<h2>Show errjob</h2>
+
+<ul>
+
+  <li>
+    <strong>Solved:</strong>
+    <%= @errjob.solved %>
+  </li>
+
+  <li>
+    <strong>Namejob:</strong>
+    <%= @errjob.namejob %>
+  </li>
+
+  <li>
+    <strong>Error:</strong>
+    <%= @errjob.error %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: errjob_path(@conn, :edit, @errjob) %>
+<%= link "Back", to: errjob_path(@conn, :index) %>

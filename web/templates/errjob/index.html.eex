@@ -1,0 +1,30 @@
+<h2>Listing errjobs</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Solved</th>
+      <th>Namejob</th>
+      <th>Error</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for errjob <- @errjobs do %>
+    <tr>
+      <td><%= errjob.solved %></td>
+      <td><%= errjob.namejob %></td>
+      <td><%= errjob.error %></td>
+
+      <td class="text-right">
+        <%= link "Show", to: errjob_path(@conn, :show, errjob), class: "btn btn-default btn-xs" %>
+        <%= link "Edit", to: errjob_path(@conn, :edit, errjob), class: "btn btn-default btn-xs" %>
+        <%= link "Delete", to: errjob_path(@conn, :delete, errjob), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New errjob", to: errjob_path(@conn, :new) %>
